@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Layout, Button, Icon, Carousel, Tabs, InputNumber } from 'antd';
 import Footer from '../elements/Footer';
-import LotsGrid from '../elements/LotsGrid';
+import LotsGrid from '../elements/LotsGrid'
+
 const { Header, Content } = Layout;
 const TabPane = Tabs.TabPane;
 
