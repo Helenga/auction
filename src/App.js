@@ -1,25 +1,23 @@
 import React, { Component } from 'react';
-import './App.css';
-import { Layout, Row, Col, Carousel, Icon, Pagination } from 'antd';
-import 'antd/dist/antd.css';
+import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 
-class App extends Component {
-  render() {
+import LotsListPage from './pages/LotsListPage';
+import LotPage from './pages/LotPage';
+import UserProfile from './pages/UserProfile';
+import PageNotFound from './pages/PageNotFound';
+
+const App = () => {
     return (
-      <Layout>
-        <Row gutter={2}>
-  <Col span={18}>
-    
-  </Col>
-  <Col span={6}>
-    <h2>{ "title" }</h2>
-    <p><Icon type="tags-o" style={{fontSize: '15px'}} /></p>
-    <p>{ "body" }</p>
-  </Col>
-</Row>
-      </Layout>
-    );
-  }
+      <BrowserRouter>
+      <Switch>
+        <Route path='/' exact component={LotsListPage} />
+        <Route path='/lots/:lot' component={LotPage} />
+        <Route path='/users/:user' component={UserProfile} />
+        <Route path='/404' component={PageNotFound}/>
+        <Redirect to='/404' />
+      </Switch>
+      </BrowserRouter>
+  )
 }
 
 export default App;
