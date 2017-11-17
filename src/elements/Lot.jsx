@@ -22,9 +22,6 @@ class Lot extends React.Component {
                 <LotImage />
 
                 <h2 className='timer'>До конца {this.props.timer}</h2>
-                {/*<Counter
-                    onStop={() => alert('stopped')}
-                stop={new Date('Wed Nov 16 2017 15:57:38 GMT+0300 (MSK)')}/>*/}
                 <h2>Текущая ставка {this.props.currentPrice}</h2>
                 <h2 id={`madeBet`} style={{ visibility: 'hidden', position: 'absolute' }}>
                 Ваша ставка {this.props.bet}

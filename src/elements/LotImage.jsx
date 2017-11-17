@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import { Carousel } from 'antd';
 import defaultPicture from '../Pictures/default.jpg';
 
-
-
 class LotsImage extends React.Component {
     static defaultProps = {
         imgSrc: defaultPicture
