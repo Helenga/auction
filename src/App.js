@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 
-import LotsListPage from './pages/LotsListPage';
-import LotPage from './pages/LotPage';
-import UserProfile from './pages/UserProfile';
-import PageNotFound from './pages/PageNotFound';
+import LotsListPage from './containers/LotsListPage';
+import LotPage from './containers/LotPage';
+import UserProfile from './containers/UserProfile';
+import PageNotFound from './containers/PageNotFound';
 
 const App = () => {
     return (

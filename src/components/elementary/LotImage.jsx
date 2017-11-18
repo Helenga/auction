@@ -4,6 +4,9 @@ import { Carousel } from 'antd';
 import defaultPicture from '../Pictures/default.jpg';
 
 class LotsImage extends React.Component {
+    constructor(props) {
+        super(props);
+    }
     static defaultProps = {
         imgSrc: defaultPicture
     }

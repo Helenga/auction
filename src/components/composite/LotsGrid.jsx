@@ -11,6 +11,7 @@ class LotsGrid extends React.Component {
     }
     static defaultProps = {
         title: 'untitled',
+        currentPrice: 0
     }
     render() {
         return (
