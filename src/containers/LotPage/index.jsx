@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Layout } from 'antd';
-import Footer from '../components/elementary/Footer';
-import Lot from '../components/composite/Lot';
-import BackToLotsButton from '../components/elementary/BackToLotsButton';
-import backImg from '../Pictures/darkPattern.jpg';
-import UserProfileButton from '../components/elementary/UserProfileButton';
+import Footer from '../../components/elementary/Footer';
+import Lot from '../../components/composite/Lot';
+import BackToLotsButton from '../../components/elementary/BackToLotsButton';
+import backImg from '../../Pictures/darkPattern.jpg';
+import UserProfileButton from '../../components/elementary/UserProfileButton';
 const { Header, Content } = Layout;
 
 class LotPage extends React.Component {

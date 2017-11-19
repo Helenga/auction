@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 
-import LotsListPage from './containers/LotsListPage';
-import LotPage from './containers/LotPage';
-import UserProfile from './containers/UserProfile';
-import PageNotFound from './containers/PageNotFound';
+import LotsListPage from './containers/LotsListPage/index';
+import LotPage from './containers/LotPage/index';
+import UserProfile from './containers/UserProfile/index';
+import PageNotFound from './containers/PageNotFound/index';
+
+import { connect } from 'react-redux';
 
 const App = () => {
-    return (
-      <BrowserRouter>
+  return (
+    <BrowserRouter>
       <Switch>
         <Route path='/' exact component={LotsListPage} />
         <Route path='/lots/:lot' component={LotPage} />
@@ -16,8 +18,14 @@ const App = () => {
         <Route path='/404' component={PageNotFound}/>
         <Redirect to='/404' />
       </Switch>
-      </BrowserRouter>
+    </BrowserRouter>
   )
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    user: state.userInfo.user
+  }
+}
+
+export default connect(mapStateToProps)(App);

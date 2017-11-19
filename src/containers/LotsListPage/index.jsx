@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import 'antd/dist/antd.css';
 import { Layout, Menu, Button, BackTop } from 'antd';
 import { Link } from 'react-router-dom';
-import backImg from '../Pictures/darkPattern.jpg';
+import backImg from '../../Pictures/darkPattern.jpg';
 
-import LotsCategoriesNavBar from '../components/composite/LotsCategoriesNavBar';
-import SearchBar from '../components/elementary/SearchBar';
-import Footer from '../components/elementary/Footer';
-import LotsGrid from '../components/composite/LotsGrid';
-import UserProfileButton from '../components/elementary/UserProfileButton';
-import LotsPagination from '../components/elementary/LotsPagination';
+import LotsCategoriesNavBar from '../../components/composite/LotsCategoriesNavBar';
+import SearchBar from '../../components/elementary/SearchBar';
+import Footer from '../../components/elementary/Footer';
+import LotsGrid from '../../components/composite/LotsGrid';
+import UserProfileButton from '../../components/elementary/UserProfileButton';
+import LotsPagination from '../../components/elementary/LotsPagination';
 
 const { Header, Content, Sider } = Layout;
 

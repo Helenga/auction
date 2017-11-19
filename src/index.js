@@ -1,11 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import LotsListPage from './containers/LotsListPage';
-import LotPage from './containers/LotPage';
-import UserProfile from './containers/UserProfile';
-import PageNotFound from './containers/PageNotFound';
+import { Provider } from 'react-redux';
 import registerServiceWorker from './registerServiceWorker';
+import configureStore from './store/configureStore';
+import rootReducer from './store/rootReducer';
 import App from './App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const store = configureStore({}, rootReducer)
+
+ReactDOM.render(<Provider store={store}>
+                    <App />
+                </Provider>, 
+                document.getElementById('root'));
 registerServiceWorker();
