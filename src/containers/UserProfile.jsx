@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Layout, Tabs } from 'antd';
+import backImg from '../Pictures/darkPattern.jpg';
 import Footer from '../components/elementary/Footer';
-import LotsGrid from '../components/composite/LotsGrid';
+import MadeBetsTable from '../components/elementary/MadeBetsTable';
 import BackToLotsButton from '../components/elementary/BackToLotsButton';
 import ExitButton from '../components/elementary/ExitButton';
 
@@ -15,18 +16,19 @@ class UserProfile extends React.Component {
     }
     render() {
         return (
-            <Layout style={{ height: '100vh' }}>
-                <Header>
+            <Layout style={{ height: '100vh', backgroundImage: `url(${backImg})` }}>
+                <Header style={{ background: '#0b0b0c' }}>
                     <BackToLotsButton />
                     <ExitButton />
                 </Header>
-                <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280 }}>
-                    <Tabs>
+                <Content style={{ margin: '24px 70px', padding: "0 50px", minHeight: 280,
+                                  backgroundColor: 'rgba(226, 222, 242, 0.2)', borderRadius: 20 }}>
+                    <Tabs style={{ color: '#fff', padding: 20 }}>
                         <TabPane tab="Профиль" key="1">
 
                         </TabPane>
                         <TabPane tab="Лоты под ставкой" key="2">
-                            <LotsGrid />
+                            <MadeBetsTable />
                         </TabPane>
                     </Tabs>
                 </Content>

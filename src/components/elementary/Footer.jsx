@@ -3,7 +3,7 @@ import { Layout } from 'antd';
 
 const Footer = () => {
     return (
-        <Layout.Footer style={{ textAlign: 'center', background: '#000' }}>
+        <Layout.Footer style={{ textAlign: 'center', background: '#0b0b0c' }}>
             Footer
         </Layout.Footer>
         );

@@ -9,10 +9,9 @@ class DirectiveMakeBet extends React.Component {
     }
     render() {
         return (
-            <Button type="primary" style={{ bottom: '-15px' }}
-                className="makeBetButton"
+            <Button type="primary" style={{ bottom: '-15px', width: '100%' }}
             >
-                <Link to={`/lots/${this.props.userId}`}>Сделать ставку >></Link>
+                <Link to={`/lots/${this.props.userId}`}>Сделать ставку</Link>
             </Button>
         );
     }

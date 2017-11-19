@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Card, Button }  from 'antd';
 import LotImage from '../elementary/LotImage';
 import LotSummary from '../elementary/LotSummary';
-import DirectiveMakeBet from '../elementary/LotSummary';
+import DirectiveMakeBet from '../elementary/DirectiveMakeBet';
 
 class Lot extends React.Component {
     constructor(props) {
@@ -14,14 +14,15 @@ class Lot extends React.Component {
         title: 'untitled'
     }
     static PropTypes = {
-        imgSrc: PropTypes.arrayOf(string),
+        imgSrc: PropTypes.string,
         title: PropTypes.string,
         currentPrice: PropTypes.number,
         bet: PropTypes.number
     }
     render() {
         return (
-            <Card title={this.props.title} bordered={false} style={{ minHeight: '350px' }}>
+            <Card title={this.props.title} bordered={true} style={{ minHeight: '350px', paddingBottom: 10,
+                  backgroundColor: '#3c3a44', borderBottomLeftRadius: 10, borderBottomRightRadius: 10, textAlign: 'center' }}>
                 <LotImage imgSrc={this.props.imgSrc}/>
                 <LotSummary />
                 <DirectiveMakeBet />

@@ -19,10 +19,10 @@ class LotInfo extends React.Component {
     render() {
         return (
             <div style={{ marginLeft: 20 }}>
-                <h3>Автор лота {this.props.author}</h3><br/>
-                <h3>Местонахождение {this.props.location}</h3><br/>
-                <h3>До окончания {this.props.timer}</h3><br/>
-                <h3>Текущая ставка {this.props.currentPrice}</h3><br/>
+                <h3 style={{ color: '#fff' }}>Автор лота {this.props.author}</h3><br/>
+                <h3 style={{ color: '#fff' }}>Местонахождение {this.props.location}</h3><br/>
+                <h3 style={{ color: '#fff' }}>До окончания {this.props.timer}</h3><br/>
+                <h3 style={{ color: '#fff' }}>Текущая ставка {this.props.currentPrice}</h3><br/>
             </div> 
         );
     }

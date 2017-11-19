@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Carousel } from 'antd';
-import defaultPicture from '../Pictures/default.jpg';
+import defaultPicture from '../../Pictures/default.jpg';
 
 class LotsImage extends React.Component {
     constructor(props) {

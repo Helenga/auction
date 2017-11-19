@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Row, Col } from 'antd';
-import Lot from './Lot';
+import LotCard from './LotCard';
 
 
 class LotsGrid extends React.Component {
@@ -15,15 +15,15 @@ class LotsGrid extends React.Component {
     }
     render() {
         return (
-            <Row gutter={16} style={{ marginBottom: '15px' }}>
+            <Row gutter={16} style={{ marginBottom: '15px', display: 'flex' }}>
             <Col span={8}>
-                <Lot title={this.props.title} currentPrice={this.props.currentPrice}/>
+                <LotCard title={this.props.title} currentPrice={this.props.currentPrice}/>
             </Col>
             <Col span={8}>
-                <Lot title={this.props.title} currentPrice={this.props.currentPrice}/>
+                <LotCard title={this.props.title} currentPrice={this.props.currentPrice}/>
             </Col>
             <Col span={8}>
-                <Lot title={this.props.title} currentPrice={this.props.currentPrice}/>
+                <LotCard title={this.props.title} currentPrice={this.props.currentPrice}/>
             </Col>
           </Row>
         );

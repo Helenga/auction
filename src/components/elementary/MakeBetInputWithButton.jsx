@@ -21,13 +21,13 @@ class MakeBetInputWithButton extends React.Component {
     }
     render() {
         return(
-            <div style={{ height: '13vh', clear: 'both', padding: '2vh', float: 'right' }}>
+            <div style={{ height: '13vh', clear: 'both', float: 'right', display: 'flex' }}>
                 <InputNumber min={this.props.minBet} max={this.props.maxBet} 
                     defaultValue={100} onChange={this.onChange} 
-                    style={{ width: '120px', height: '8vh', fontSize: '20px', padding: '10px' }}
+                    style={{ minWidth: '130px', minHeight: '7vh', fontSize: '20px', padding: '3%', textAlign: 'justify', left: 20 }}
                 />
                 <Button type="primary" 
-                    style={{ height: '8vh', fontSize: '20px', left: '-10px' }} 
+                    style={{ minHeight: '7vh', fontSize: '20px' }} 
                 >
                     <Link to='#'>Сделать ставку</Link>
                 </Button>
