@@ -5,13 +5,13 @@ import { Button }  from 'antd';
 
 class DirectiveMakeBet extends React.Component {
     static PropTypes = {
-        userId: PropTypes.number
+        lotId: PropTypes.number
     }
     render() {
         return (
             <Button type="primary" style={{ bottom: '-15px', width: '100%' }}
             >
-                <Link to={`/lots/${this.props.userId}`}>Сделать ставку</Link>
+                <Link to={`/lots/${this.props.lotId}`}>Сделать ставку</Link>
             </Button>
         );
     }
