@@ -8,13 +8,14 @@ class LotInfo extends React.Component {
     static defaultProps = {
         author: 'undefined',
         location: 'undefined',
-        timer: (new Date).toLocaleDateString(),
-        currentPrice: 1
+        beforeClosing: 0,
+        betsNumber: 1
     }
     static PropTypes = {
         author: PropTypes.string,
         location: PropTypes.string,
-        currentPrice: PropTypes.number
+        beforeClosing: PropTypes.number,
+        betsNumber: PropTypes.number
     }
 
     render() {
@@ -22,8 +23,8 @@ class LotInfo extends React.Component {
             <div style={{ marginLeft: 20 }}>
                 <h3 style={{ color: '#fff' }}>Автор лота: {this.props.author}</h3><br/>
                 <h3 style={{ color: '#fff' }}>Местонахождение: {this.props.location}</h3><br/>
-                <h3 style={{ color: '#fff' }}>Дата окончания: {this.props.timer}</h3><br/>
-                <h3 style={{ color: '#fff' }}>Текущая ставка: {this.props.currentPrice}</h3><br/>
+                <h3 style={{ color: '#fff' }}>До окончания: {this.props.beforeClosing}</h3><br/>
+                <h3 style={{ color: '#fff' }}>Количество ставок: {this.props.betsNumber}</h3><br/>
             </div> 
         );
     }

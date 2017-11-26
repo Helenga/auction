@@ -28,4 +28,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect()(App);
+export default App;

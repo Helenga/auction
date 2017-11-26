@@ -10,22 +10,17 @@ class Lot extends React.Component {
     constructor(props) {
         super(props);
     }
-    static defaultProps = {
-        title: 'untitled'
-    }
     static PropTypes = {
         imgSrc: PropTypes.string,
-        title: PropTypes.string,
-        currentPrice: PropTypes.number,
-        bet: PropTypes.number
+        title: PropTypes.string
     }
     render() {
         return (
             <Card title={this.props.title} bordered={true} style={{ minHeight: '350px', paddingBottom: 10,
                   backgroundColor: '#3c3a44', borderBottomLeftRadius: 10, borderBottomRightRadius: 10, textAlign: 'center' }}>
                 <LotImage imgSrc={this.props.imgSrc}/>
-                <LotSummary />
-                <DirectiveMakeBet />
+                <LotSummary beforeClosing={this.props.beforeClosing} betsNumber={this.props.betsNumber}/>
+                <DirectiveMakeBet lotId={this.props.lotId}/>
             </Card>
         );
     }

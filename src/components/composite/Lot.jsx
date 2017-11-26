@@ -25,7 +25,7 @@ class Lot extends React.Component {
                             <LotInfo />
                         </TabPane>
                         <TabPane tab="Описание" key="2" style={{ color: '#fff' }}>
-                            <LotDescription />
+                            <LotDescription description={this.props.description}/>
                         </TabPane>
                     </Tabs>
                     

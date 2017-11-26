@@ -1,11 +1,33 @@
 export const GET_ACTUAL_LOTS = 'GET_ACTUAL_LOTS';
 
-export const SELECT_APPROPRIATE_LOTS = 'SELECT_APPROPRIATE_LOTS';
+export const GET_ACTUAL_LOTS_SUCCESS = 'GET_ACTUAL_LOTS_SUCCESS';
 
-export const getActualLots = function() {
-    this.dispatch({ type: GET_ACTUAL_LOTS })
+export const GET_ACTUAL_LOTS_FAILED = 'GET_ACTUAL_LOTS_FAILED';
+
+//export const SELECT_APPROPRIATE_LOTS = 'SELECT_APPROPRIATE_LOTS';
+
+export function getActualLots() {
+    return {
+        type: GET_ACTUAL_LOTS
+    }
 }
 
-export const selectAppropriateLots = function(searchString) {
-    this.dispatch({ type: SELECT_APPROPRIATE_LOTS, payload: searchString })
+export function getActualLotsSuccess(data) {
+    return {
+        type: GET_ACTUAL_LOTS_SUCCESS,
+        data
+    }
 }
+
+export function getActualLotsFailed() {
+    return {
+        type: GET_ACTUAL_LOTS_FAILED
+    }
+}
+
+export function fetchData() {
+    return {
+        type: GET_ACTUAL_LOTS
+    }
+}
+

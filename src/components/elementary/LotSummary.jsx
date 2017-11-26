@@ -5,17 +5,18 @@ import { Button }  from 'antd';
 
 class LotSummary extends React.Component {
     static defaultProps = {
-        timer: (new Date).toLocaleDateString(),
-        currentPrice: 1
+        beforeClosing: 0,
+        betsNumber: 1
     }
     static PropTypes = {
+        beforeClosing: PropTypes.number,
         userId: PropTypes.number
     }
     render() {
         return (
             <div style={{ paddingTop: 10 }}>
-                <h2 style={{ color: '#fff' }}>Дата окончания: {this.props.timer}</h2>
-                <h2 style={{ color: '#fff' }}>Текущая ставка: {this.props.currentPrice}</h2>
+                <h2 style={{ color: '#fff' }}>До окончания: {this.props.beforeClosing}</h2>
+                <h2 style={{ color: '#fff' }}>Количество ставок: {this.props.betsNumber}</h2>
             </div>
         );
     }
