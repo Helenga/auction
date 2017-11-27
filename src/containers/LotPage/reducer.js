@@ -1,41 +1,63 @@
 import { fromJS } from 'immutable';
-import { UPDATE_LOT_CURRENT_PRICE, GET_CHOOSEN_LOT } from './actions';
+import { GET_CHOOSEN_LOT, GET_CHOOSEN_LOT_SUCCESS, GET_CHOOSEN_LOT_FAILED, 
+         UPDATE_LOT_CURRENT_PRICE, UPDATE_LOT_CURRENT_PRICE_SUCCESS, UPDATE_LOT_CURRENT_PRICE_FAILED } from './actions';
+
+const initialState = {
+    lot: {},
+    dataFetched: false,
+    isFetching: false,
+    error: false
+}
 
 const handlers = {
-    [UPDATE_LOT_CURRENT_PRICE]: (state, {userId, lotId, amount}) => { 
-        if (userIsRegistered(userId)) {
-            const actualLots = state.get('lots');
-            return state.set('lots', actualLots.map(lot => {
-                if(lot.id === lotId) {
-                    if(amount > lot.currentPrice) {
-                        return Object.assign({}, lot, {currentPrice: amount})
-                    }
-                }
-                return lot
-            }))
+    [GET_CHOOSEN_LOT]: (state, data) => { 
+         return {
+            ...state,
+             lot: {},
+             isFetching: true
+         }
+    },
+    [GET_CHOOSEN_LOT_SUCCESS]: (state, data) => {
+        return {
+            ...state,
+            lot: data,
+            isFetching: false
         }
     },
-    [GET_CHOOSEN_LOT]: (state, {lotId}) => {
-        const actualLots = state.get('lots');
-        return actualLots.map(lot => {
-            if(lot.id === lotId) {
-                return lot
-            }
-        })
-    }
+    [GET_CHOOSEN_LOT_FAILED]: (state) => {
+        return {
+            ...state,
+            isFetching: false,
+            error: true
+        }
+    },
+    [UPDATE_LOT_CURRENT_PRICE]: (state) => { 
+        return {
+            ...state,
+            lot: {},
+            isFetching: true
+        }
+   },
+   [UPDATE_LOT_CURRENT_PRICE_SUCCESS]: (state, data) => {
+       return {
+           ...state,
+           lot: data,
+           isFetching: false
+       }
+   },
+   [UPDATE_LOT_CURRENT_PRICE_FAILED]: (state) => {
+       return {
+           ...state,
+           isFetching: false,
+           error: true
+       }
+   }
 }
 
-export default function (state, {type, payload}) {
+export default function (state = initialState, { type, data }) {
     const handler = handlers[type]
     if(handler) {
-        return handler(state, payload)
+        return handler(state, data)
     }
-    return fromJS({lots: null})
-}
-
-let userIsRegistered = function(state, userId) {
-    const registeredUsers = state.get('users')
-    if (registeredUsers.map(user => user.id === userId))
-        return true;
-    return false;
+    return fromJS(state)
 }

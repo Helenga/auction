@@ -1,6 +1,13 @@
 import { fromJS } from 'immutable';
 import { GET_ACTUAL_LOTS, GET_ACTUAL_LOTS_SUCCESS, GET_ACTUAL_LOTS_FAILED } from './actions';
 
+const initialState = {
+    lots: [],
+    dataFetched: false,
+    isFetching: false,
+    error: false
+}
+
 const handlers = {
     [GET_ACTUAL_LOTS]: (state) => { 
          return {
@@ -25,15 +32,10 @@ const handlers = {
     }
 }
 
-export default function (state, { type, data }) {
+export default function (state = initialState, { type, data }) {
     const handler = handlers[type]
     if(handler) {
         return handler(state, data)
     }
-    return {
-        lots: [],
-        dataFetched: false,
-        isFetching: false,
-        error: false
-    }
+    return fromJS(state)
 }

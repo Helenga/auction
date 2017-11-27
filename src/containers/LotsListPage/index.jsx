@@ -29,7 +29,6 @@ class LotsListPage extends Component {
     this.setState({ collapsed });
   }
     render() {
-      //const { lots } = this.props.lotsListReducer;
       return(
         <Layout style={{ minHeight: '100vh' }}>
         <Layout style={{ position: 'relative', backgroundImage: `url(${backImg})`}}>
@@ -55,7 +54,7 @@ class LotsListPage extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    lots: state.lotsListReducer.lots
+    lots: state.lotsList.lots
   }
 }
 

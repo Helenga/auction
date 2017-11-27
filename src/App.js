@@ -13,8 +13,8 @@ const App = () => {
     <BrowserRouter>
       <Switch>
         <Route path='/' exact component={LotsListPage} />
-        <Route path='/lots/:lot' component={LotPage} />
-        <Route path='/users/:user' component={UserProfile} />
+        <Route path='/lots/:lotId' component={LotPage} />
+        <Route path='/users/:userId' component={UserProfile} />
         <Route path='/404' component={PageNotFound}/>
         <Redirect to='/404' />
       </Switch>

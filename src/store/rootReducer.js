@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
 
 import '../containers/LotPage/reducer';
-import lotsListReducer from '../containers/LotsListPage/reducer';
+import lotsList from '../containers/LotsListPage/reducer';
+import requiredLot from '../containers/LotPage/reducer';
 import '../containers/UserProfile/reducer';
 
 export default combineReducers({
-    lotsListReducer
+    lotsList,
+    requiredLot
 })

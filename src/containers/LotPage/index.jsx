@@ -9,7 +9,7 @@ import UserProfileButton from '../../components/elementary/UserProfileButton';
 
 import DefineUserModal from '../DefineUserModal/index';
 
-import { fetchData } from '../LotsListPage/actions'
+import { fetchData } from './actions'
 import { connect } from 'react-redux'
 
 const { Header, Content } = Layout;
@@ -19,7 +19,8 @@ class LotPage extends React.Component {
         super(props);
     }
     componentDidMount() {
-        this.props.fetchData()
+        let id = this.props.match.params.lotId
+        this.props.fetchData(id)        
     }
     render() {
         return (
@@ -32,8 +33,8 @@ class LotPage extends React.Component {
             </Header>
             <Content style={{ padding: '0 50px' }}>
                 <Lot 
-                        style={{ backgroundColor: '#c7c4d3',
-                        borderRadius: 20  }}/>
+                    style={{ backgroundColor: '#c7c4d3',
+                    borderRadius: 20  }}/>
             </Content>
             <Footer />
           </Layout> 
@@ -41,16 +42,16 @@ class LotPage extends React.Component {
     }
 }
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
     return {
-      lot: state.lotsListReducer.lots[Number(match.params.redirectParam)]
+     lot: state.requiredLot.lot
     }
   }
   
   const mapDispatchToProps = (dispatch) => {
     return {
-      fetchData: () => {
-        dispatch(fetchData())
+      fetchData: (id) => {
+        dispatch(fetchData(id))
       }
     }
   }
