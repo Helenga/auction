@@ -12,6 +12,7 @@ class Profile extends React.Component {
         balance: 0
     }
     static PropTypes = {
+        user: PropTypes.object,
         login: PropTypes.string,
         balance: PropTypes.number
     }

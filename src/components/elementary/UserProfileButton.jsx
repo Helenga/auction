@@ -7,16 +7,21 @@ class BackToLotsButton extends React.Component {
     static defaultProps = {
         userId: 1
     }
+    handleClick = () => {
+        console.log(this.props)
+        const bet = document.getElementById('betInput').value
+        console.log(bet)
+        this.props.makeBetHandler(this.props.lotId, this.props.userId, bet)
+    }
     render() {
         return (<div>
-            <Button type="primary"
+            <Button type="primary" 
                 style={{ float: 'right', top: '27%', marginRight: '20px' }}>
-                Личный кабинет
+                <Link to={`users/${this.props.userId}`}>Личный кабинет</Link>
             </Button>
             </div>
         );
     }
-    
 }
 
 export default BackToLotsButton;

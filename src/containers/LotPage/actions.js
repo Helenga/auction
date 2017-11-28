@@ -16,10 +16,10 @@ export function getChoosenLot() {
     }
 }
 */
-export function getChoosenLotSuccess(data) {
+export function getChoosenLotSuccess(payload) {
     return {
         type: GET_CHOOSEN_LOT_SUCCESS,
-        data
+        payload
     }
 }
 
@@ -34,4 +34,21 @@ export function fetchData(id) {
         type: GET_CHOOSEN_LOT,
         lotId: id
     }
+}
+
+export function updateLotCurrentPrice(lotId, userId, amount) {
+    return {
+        type: UPDATE_LOT_CURRENT_PRICE,
+        lotId: lotId,
+        userId: userId,
+        amount: amount
+    }
+}
+
+export function updateLotCurrentPriceSuccess() {
+    type: UPDATE_LOT_CURRENT_PRICE
+}
+
+export function updateLotCurrentPriceFailed() {
+    type: UPDATE_LOT_CURRENT_PRICE_FAILED
 }

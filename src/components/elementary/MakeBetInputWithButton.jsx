@@ -16,20 +16,23 @@ class MakeBetInputWithButton extends React.Component {
         minBet: PropTypes.number,
         maxBet: PropTypes.number
     }
-    onChange(value) {
-        console.log('changed', value);
+    handleClick = () => {
+        console.log(this.props)
+        const bet = document.getElementById('betInput').value
+        console.log(bet)
+        this.props.makeBetHandler(this.props.lotId, this.props.userId, bet)
     }
     render() {
         return(
             <div style={{ height: '13vh', clear: 'both', float: 'right', display: 'flex' }}>
-                <InputNumber min={this.props.minBet} max={this.props.maxBet} 
-                    defaultValue={100} onChange={this.onChange} 
+                <InputNumber id='betInput' min={this.props.minBet} max={this.props.maxBet} 
+                    defaultValue={this.props.minBet}
                     style={{ minWidth: '130px', minHeight: '7vh', fontSize: '20px', padding: '3%', textAlign: 'justify', left: 20 }}
                 />
-                <Button type="primary" 
+                <Button type="primary" onClick={this.handleClick}
                     style={{ minHeight: '7vh', fontSize: '20px' }} 
                 >
-                    <Link to='#'>Сделать ставку</Link>
+                    Сделать ставку
                 </Button>
             </div>            
         );

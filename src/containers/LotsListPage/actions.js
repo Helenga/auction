@@ -4,7 +4,7 @@ export const GET_ACTUAL_LOTS_SUCCESS = 'GET_ACTUAL_LOTS_SUCCESS';
 
 export const GET_ACTUAL_LOTS_FAILED = 'GET_ACTUAL_LOTS_FAILED';
 
-//export const SELECT_APPROPRIATE_LOTS = 'SELECT_APPROPRIATE_LOTS';
+
 
 export function getActualLots() {
     return {
@@ -12,10 +12,10 @@ export function getActualLots() {
     }
 }
 
-export function getActualLotsSuccess(data) {
+export function getActualLotsSuccess(payload) {
     return {
         type: GET_ACTUAL_LOTS_SUCCESS,
-        data
+        payload
     }
 }
 

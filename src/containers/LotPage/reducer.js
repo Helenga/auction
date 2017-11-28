@@ -10,17 +10,17 @@ const initialState = {
 }
 
 const handlers = {
-    [GET_CHOOSEN_LOT]: (state, data) => { 
+    [GET_CHOOSEN_LOT]: (state, payload) => { 
          return {
             ...state,
              lot: {},
              isFetching: true
          }
     },
-    [GET_CHOOSEN_LOT_SUCCESS]: (state, data) => {
+    [GET_CHOOSEN_LOT_SUCCESS]: (state, payload) => {
         return {
             ...state,
-            lot: data,
+            lot: payload,
             isFetching: false
         }
     },
@@ -34,14 +34,14 @@ const handlers = {
     [UPDATE_LOT_CURRENT_PRICE]: (state) => { 
         return {
             ...state,
-            lot: {},
+            //lot: {},
             isFetching: true
         }
    },
-   [UPDATE_LOT_CURRENT_PRICE_SUCCESS]: (state, data) => {
+   [UPDATE_LOT_CURRENT_PRICE_SUCCESS]: (state, payload) => {
        return {
            ...state,
-           lot: data,
+           lot: payload,
            isFetching: false
        }
    },
@@ -54,10 +54,10 @@ const handlers = {
    }
 }
 
-export default function (state = initialState, { type, data }) {
+export default function (state = initialState, { type, payload }) {
     const handler = handlers[type]
     if(handler) {
-        return handler(state, data)
+        return handler(state, payload)
     }
     return fromJS(state)
 }

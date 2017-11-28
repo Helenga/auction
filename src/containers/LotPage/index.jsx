@@ -10,6 +10,7 @@ import UserProfileButton from '../../components/elementary/UserProfileButton';
 import DefineUserModal from '../DefineUserModal/index';
 
 import { fetchData } from './actions'
+import { updateLotCurrentPrice } from './actions'
 import { connect } from 'react-redux'
 
 const { Header, Content } = Layout;
@@ -20,7 +21,7 @@ class LotPage extends React.Component {
     }
     componentDidMount() {
         let id = this.props.match.params.lotId
-        this.props.fetchData(id)        
+        this.props.fetchData(id = 1)        
     }
     render() {
         return (
@@ -32,7 +33,7 @@ class LotPage extends React.Component {
                 </div>
             </Header>
             <Content style={{ padding: '0 50px' }}>
-                <Lot 
+                <Lot lot={this.props.lot} makeBetHandler={this.props.updateLotCurrentPrice} userId={1}
                     style={{ backgroundColor: '#c7c4d3',
                     borderRadius: 20  }}/>
             </Content>
@@ -52,6 +53,9 @@ const mapStateToProps = (state) => {
     return {
       fetchData: (id) => {
         dispatch(fetchData(id))
+      },
+      updateLotCurrentPrice: (lotId, userId, amount) => {
+        dispatch(updateLotCurrentPrice(lotId, userId, amount))
       }
     }
   }

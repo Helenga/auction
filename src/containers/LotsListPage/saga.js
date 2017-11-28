@@ -4,8 +4,8 @@ import config from '../../config'
 
 function* getActualLots(action) {
     try {
-        const data = yield getLots()
-        yield put({type: GET_ACTUAL_LOTS_SUCCESS, data}) 
+        const payload = yield getLots()
+        yield put({type: GET_ACTUAL_LOTS_SUCCESS, payload}) 
     }
     catch(e) {
         yield put({type: GET_ACTUAL_LOTS_FAILED})

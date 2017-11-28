@@ -12,7 +12,7 @@ import Footer from '../../components/elementary/Footer';
 import UserProfileButton from '../../components/elementary/UserProfileButton';
 
 import LotsPagination from '../../components/elementary/LotsPagination';
-import DefineUserModal from '../DefineUserModal/index';
+//import DefineUserModal from '../DefineUserModal/index';
 import { fetchData } from './actions';
 
 const { Header, Content, Sider } = Layout;
@@ -35,7 +35,7 @@ class LotsListPage extends Component {
           <Header style={{ background: '#0b0b0c', padding: 0 }}>
             <SearchBar />
             <div style={{ float: 'right', top: '27%', marginRight: '20px' }}>
-            <DefineUserModal />      
+            <UserProfileButton />      
             </div>
           </Header>
           <Content style={{ margin: '24px 16px', padding: 24, 

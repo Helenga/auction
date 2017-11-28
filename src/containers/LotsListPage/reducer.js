@@ -16,10 +16,10 @@ const handlers = {
              isFetching: true
          }
     },
-    [GET_ACTUAL_LOTS_SUCCESS]: (state, data) => {
+    [GET_ACTUAL_LOTS_SUCCESS]: (state, payload) => {
         return {
             ...state,
-            lots: data,
+            lots: payload,
             isFetching: false
         }
     },
@@ -32,10 +32,10 @@ const handlers = {
     }
 }
 
-export default function (state = initialState, { type, data }) {
+export default function (state = initialState, { type, payload }) {
     const handler = handlers[type]
     if(handler) {
-        return handler(state, data)
+        return handler(state, payload)
     }
     return fromJS(state)
 }

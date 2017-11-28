@@ -7,7 +7,7 @@ import rootReducer from './store/rootReducer';
 import rootSaga from './store/rootSaga';
 import App from './App';
 
-const store = configureStore({}, rootReducer)
+const store = configureStore({ }, rootReducer)
 
 ReactDOM.render(<Provider store={store}>
                     <App />
