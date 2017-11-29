@@ -41,7 +41,7 @@ class LotsListPage extends Component {
           <Content style={{ margin: '24px 16px', padding: 24, 
                             minHeight: 280, backgroundColor: 'rgba(226, 222, 242, 0.2)',
                             borderRadius: 20  }}>
-            <LotsGrid lots={this.props.lots}/>
+            <LotsGrid lots={this.props.lots} currentUserId={1}/>
             <BackTop style={{ right: '20px' }}/>
           </Content>
           <Footer />
@@ -54,7 +54,8 @@ class LotsListPage extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    lots: state.lotsList.lots
+    lots: state.lotsList.lots,
+    currentUserId: state.currentUser.user.id
   }
 }
 

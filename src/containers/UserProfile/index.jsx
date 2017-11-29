@@ -20,8 +20,12 @@ class UserProfile extends React.Component {
     componentDidMount() {
         let id = this.props.match.params.userId
         this.props.fetchData(id)
+    }
+
+    componentDidUpdate(prevProps, prevState) {
         console.log(this.props.user)
     }
+
     render() {
         return (
             <Layout style={{ height: '100vh', backgroundImage: `url(${backImg})` }}>
@@ -51,7 +55,7 @@ class UserProfile extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-      user: state
+      user: state.currentUser.user
     }
 }
   

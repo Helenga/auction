@@ -14,9 +14,10 @@ class BackToLotsButton extends React.Component {
         this.props.makeBetHandler(this.props.lotId, this.props.userId, bet)
     }
     render() {
-        return (<div>
+        return (
+        <div style={{ }}>
             <Button type="primary" 
-                style={{ float: 'right', top: '27%', marginRight: '20px' }}>
+                style={{ float: 'right', marginTop: '12%', marginRight: '20px' }}>
                 <Link to={`users/${this.props.userId}`}>Личный кабинет</Link>
             </Button>
             </div>

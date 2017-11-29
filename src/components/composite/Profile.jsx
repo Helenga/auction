@@ -21,14 +21,14 @@ class Profile extends React.Component {
             <div>
             <Row style={{ marginBottom: '15px', display: 'flex' }}>
                 <Col span={24}>
-                    <h2 style={{ color: '#fff' }}>Логин: {this.props.login}</h2>
+                    <h2 style={{ color: '#fff' }}>Логин: {this.props.user.name}</h2>
                     <Link to='#'>Изменить пароль</Link>
                 </Col>
             </Row>
             <hr/>
             <Row style={{ marginBottom: '15px', display: 'flex' }}>
                 <Col span={24}>
-                    <h2 style={{ color: '#fff' }}>Текущий счёт: {this.props.balance}</h2>
+                    <h2 style={{ color: '#fff' }}>Текущий счёт: {this.props.user.account}</h2>
                     <Link to='#'>Пополнить</Link>
                 </Col>
             </Row>

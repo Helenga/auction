@@ -1,4 +1,3 @@
-import { fromJS } from 'immutable';
 import { GET_ACTUAL_LOTS, GET_ACTUAL_LOTS_SUCCESS, GET_ACTUAL_LOTS_FAILED } from './actions';
 
 const initialState = {
@@ -37,5 +36,5 @@ export default function (state = initialState, { type, payload }) {
     if(handler) {
         return handler(state, payload)
     }
-    return fromJS(state)
+    return state
 }

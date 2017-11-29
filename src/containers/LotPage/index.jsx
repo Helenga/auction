@@ -21,7 +21,7 @@ class LotPage extends React.Component {
     }
     componentDidMount() {
         let id = this.props.match.params.lotId
-        this.props.fetchData(id = 1)        
+        this.props.fetchData(id)        
     }
     render() {
         return (

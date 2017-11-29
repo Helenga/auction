@@ -1,4 +1,4 @@
-import { fromJS } from 'immutable';
+
 import { 
     GET_CURRENT_USER,
     GET_CURRENT_USER_SUCCESS,
@@ -10,22 +10,25 @@ import {
 
  const initialState = {
     user: {},
+    currentUser: undefined,
     dataFetched: false,
     isFetching: false,
     error: false
  }
 
 const handlers = {
-    [GET_CURRENT_USER]: (state, payload) => { 
+    [GET_CURRENT_USER]: (state) => { 
         return {
            ...state,
-            isFetching: true
+           user: {},
+           isFetching: true
         }
    },
    [GET_CURRENT_USER_SUCCESS]: (state, payload) => {
        return {
            ...state,
            user: payload,
+           currentUser: payload.id,
            isFetching: false
        }
    },
@@ -35,16 +38,7 @@ const handlers = {
            isFetching: false,
            error: true
        }
-   }/*,
-    [CHANGE_PASSWORD]: (state, {userId, prevPassword, newPassword}) => {
-        
-    },
-    [ADD_FUNDS]: (state, {amount}) => {
-
-    },
-    [CREATE_LOT]: (state, {userId, title, location, timer, description, minBet, maxBet}) => {
-        
-    }*/
+   }
 }
 
 export default function (state = initialState, { type, payload }) {
@@ -52,5 +46,5 @@ export default function (state = initialState, { type, payload }) {
     if(handler) {
         return handler(state, payload)
     }
-    return fromJS(state)
+    return state
 }
