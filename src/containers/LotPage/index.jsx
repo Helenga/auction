@@ -4,10 +4,7 @@ import Footer from '../../components/elementary/Footer';
 import Lot from '../../components/composite/Lot';
 import BackToLotsButton from '../../components/elementary/BackToLotsButton';
 import backImg from '../../Pictures/darkPattern.jpg';
-
 import UserProfileButton from '../../components/elementary/UserProfileButton';
-
-import DefineUserModal from '../DefineUserModal/index';
 
 import { fetchData } from './actions'
 import { updateLotCurrentPrice } from './actions'
@@ -29,7 +26,7 @@ class LotPage extends React.Component {
             <Header style={{ background: '#0b0b0c' }}>
                 <BackToLotsButton />
                 <div style={{ float: 'right', top: '27%', marginRight: '20px' }}>
-                    <DefineUserModal />      
+                    <UserProfileButton />      
                 </div>
             </Header>
             <Content style={{ padding: '0 50px' }}>

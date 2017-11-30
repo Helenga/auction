@@ -4,29 +4,20 @@ import 'antd/dist/antd.css';
 import { Layout, Menu, Button, BackTop } from 'antd';
 import { Link } from 'react-router-dom';
 import backImg from '../../Pictures/darkPattern.jpg';
-
 import LotsGrid from '../../components/composite/LotsGrid'
 import SearchBar from '../../components/elementary/SearchBar';
 import Footer from '../../components/elementary/Footer';
-
 import UserProfileButton from '../../components/elementary/UserProfileButton';
-
-import LotsPagination from '../../components/elementary/LotsPagination';
-//import DefineUserModal from '../DefineUserModal/index';
 import { fetchData } from './actions';
 
 const { Header, Content, Sider } = Layout;
 
 class LotsListPage extends Component {
-  state = {
-    collapsed: false,
-  };
+  constructor(props) {
+    super(props)
+  }
   componentDidMount() {
     this.props.fetchData()
-  }
-  onCollapse = (collapsed) => {
-    console.log(collapsed);
-    this.setState({ collapsed });
   }
     render() {
       return(
@@ -41,7 +32,7 @@ class LotsListPage extends Component {
           <Content style={{ margin: '24px 16px', padding: 24, 
                             minHeight: 280, backgroundColor: 'rgba(226, 222, 242, 0.2)',
                             borderRadius: 20  }}>
-            <LotsGrid lots={this.props.lots} currentUserId={1}/>
+            <LotsGrid lots={this.props.lots} currentUserId={this.props.currentUserId}/>
             <BackTop style={{ right: '20px' }}/>
           </Content>
           <Footer />

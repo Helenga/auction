@@ -13,7 +13,7 @@ class LotsGrid extends React.Component {
     }
     static defaultProps = {
         lots: [],
-        currentUserId: 1
+        //currentUserId: 1
     } 
       render() 
       {

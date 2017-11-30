@@ -13,19 +13,14 @@ const App = () => {
     <BrowserRouter>
       <Switch>
         <Route path='/' exact component={LotsListPage} />
+        <Route path='/lots' exact component={LotsListPage} />
         <Route path='/lots/:lotId' component={LotPage} />
         <Route path='/users/:userId' component={UserProfile} />
-        <Route path='/404' component={PageNotFound}/>
+        <Route path='/404' exact component={PageNotFound}/>
         <Redirect to='/404' />
       </Switch>
     </BrowserRouter>
   )
-}
-
-function mapStateToProps(state) {
-  return {
-    user: state.userInfo.user
-  }
 }
 
 export default App;

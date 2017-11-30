@@ -1,25 +1,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class LotDescription extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    static defaultProps = {
-        description: 'undefined'
-    }
-    static PropTypes = {
-        description: PropTypes.string
-    }
-    render() {
-        return (
-            <div style={{ marginLeft: 20, fontSize: 14, overflowY: 'auto' }}>
-                <p>
-                    {this.props.description}
-                </p>
-            </div>
-        );
-    }
+const LotDescription = props => {
+    return (
+        <div style={{ marginLeft: 20, fontSize: 14, overflowY: 'auto' }}>
+            <p>
+                {props.description}
+            </p>
+        </div>
+    );
+}
+
+LotDescription.PropTypes = {
+    description: PropTypes.string
 }
 
 export default LotDescription;

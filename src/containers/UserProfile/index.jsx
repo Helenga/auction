@@ -22,10 +22,6 @@ class UserProfile extends React.Component {
         this.props.fetchData(id)
     }
 
-    componentDidUpdate(prevProps, prevState) {
-        console.log(this.props.user)
-    }
-
     render() {
         return (
             <Layout style={{ height: '100vh', backgroundImage: `url(${backImg})` }}>
@@ -37,7 +33,7 @@ class UserProfile extends React.Component {
                                   backgroundColor: 'rgba(226, 222, 242, 0.2)', borderRadius: 20 }}>
                     <Tabs style={{ color: '#fff', padding: 20 }}>
                         <TabPane tab="Профиль" key="1">
-                            <Profile /*login={this.props.user.name} balance={this.props.user.account}*/ user={this.props.user}/>
+                            <Profile user={this.props.user}/>
                         </TabPane>
                         <TabPane tab="Лоты под ставкой" key="2">
                             <MadeBetsTable />
